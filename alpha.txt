@@ -1,0 +1,35 @@
+-- create a new table called "customers"
+CREATE TABLE customers (
+  id INT PRIMARY KEY,
+  name VARCHAR(50),
+  email VARCHAR(50),
+  country VARCHAR(50)
+);
+
+-- insert some sample data into the "customers" table
+INSERT INTO customers (id, name, email, country)
+VALUES
+  (1, 'John Doe', 'john.doe@example.com', 'USA'),
+  (2, 'Jane Smith', 'jane.smith@example.com', 'Canada'),
+  (3, 'Bob Johnson', 'bob.johnson@example.com', 'USA'),
+  (4, 'Alice Lee', 'alice.lee@example.com', 'Australia');
+
+-- retrieve all customers from the USA
+SELECT *
+FROM customers
+WHERE country = 'USA';
+
+-- update Bob Johnson's email address
+UPDATE customers
+SET email = 'bob.johnson2@example.com'
+WHERE name = 'Bob Johnson';
+
+-- retrieve the number of customers from each country
+SELECT country, COUNT(*)
+FROM customers
+GROUP BY country;
+
+-- delete Alice Lee's record from the "customers" table
+DELETE FROM customers
+WHERE name = 'Alice Lee';
+
