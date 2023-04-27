@@ -22,13 +22,14 @@ SELECT *
 FROM customers
 WHERE country = 'USA';
 
--- update Bob Johnson's email address
+-- update Doehoon Kim's email address
 
 UPDATE customers
 SET email = doehoon98@gmail.com'
 WHERE name = 'Doehoon Kim';
 
 -- retrieve the number of customers from each country
+
 SELECT country, COUNT(*)
 FROM customers
 GROUP BY country;
